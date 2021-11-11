@@ -15,18 +15,19 @@
 #
 #
 ## Решение:
-a = File.new('data/1.txt')
-text = a.read 
-b = text.each_char.map(&:to_s)
-boom = 0
-for i in b do
-    if i == "("
-        boom += 1
-    else
-        boom -=1
-    end
+floor = 0
+array = ''
+File.open("data/1.txt", 'r') do |file|
+  array << file.read.to_s
 end
-puts boom
+array.each_char do |symbol|
+  if symbol == '('
+    floor += 1
+  elsif symbol == ')'
+    floor -= 1
+  end
+end
+puts floor
 
 
 

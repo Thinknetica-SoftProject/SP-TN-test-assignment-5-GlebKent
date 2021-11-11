@@ -15,9 +15,15 @@
 #
 #
 ## Решение:
-require 'digest/md5'
-
-a = gets.chomp
-b = Digest::MD5.hexdigest(a)
-
-puts b[5..]
+require 'digest'
+a = gets.chomp()
+i = 0
+loop do
+  b = a + i.to_s
+  md5 = Digest::MD5.hexdigest b
+  if md5[0]=='0' and md5[1]=='0'and md5[2]=='0' and md5[3]=='0' and md5[4]=='0'
+     puts(i)
+     break
+  end
+  i=i+1
+  end
