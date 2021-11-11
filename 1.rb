@@ -15,7 +15,18 @@
 #
 #
 ## Решение:
-
+a = File.new('data/1.txt')
+text = a.read 
+b = text.each_char.map(&:to_s)
+boom = 0
+for i in b do
+    if i == "("
+        boom += 1
+    else
+        boom -=1
+    end
+end
+puts boom
 
 
 

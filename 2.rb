@@ -15,4 +15,9 @@
 #
 #
 ## Решение:
+require 'digest/md5'
 
+a = gets.chomp
+b = Digest::MD5.hexdigest(a)
+
+puts b[5..]

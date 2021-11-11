@@ -15,5 +15,18 @@
 #
 #
 ## Решение:
+f = File.new("data/4.txt")
+tot = 0
 
+while line = f.gets
+    l = line.split("x").map(&:to_i).sort
+    ln = l[0]
+    h = l[1]
+    w = l[2]
+    tot += 2*w*ln + 2*ln*h + 2*h*w + ln*h
+end
+
+f.close
+
+puts tot
 
